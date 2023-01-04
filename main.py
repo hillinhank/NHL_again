@@ -12,14 +12,11 @@ api = Api(app)
 # overridden the get method i.e. this is what will happen when send a get request to a specific url
 # when that happens, we will return Hello World!
 class HelloWorld(Resource):
-    def get(self):
-        return {"data": "Hello World!"}
-    
-    def post(self):
-        return {"data": "Posted"}
+    def get(self, name, test):
+        return {"name": name, "test": test}
 # now need to register this as a resource api.add_resource(Class, url) (can use a / to use a default url)
 # essentially, it determines what the root of the resource will be
-api.add_resource(HelloWorld, "/helloworld")
+api.add_resource(HelloWorld, "/helloworld/<string:name>/<int:test>")
 
 # this starts both the server and the application
 # debug=True says that we are in debug mode so we will see all of that output and any logging information, so if we have a bug it will tell us why

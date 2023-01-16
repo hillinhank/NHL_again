@@ -13,7 +13,7 @@ class BaseModel(Model):
         database = database
 
 class ConfModel(BaseModel):
-    id = AutoField()
+    #pk = id = AutoField()
     name = CharField(max_length=100)
     link = CharField(max_length=100)
     abbreviation = CharField(max_length=23)

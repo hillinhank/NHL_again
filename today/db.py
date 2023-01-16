@@ -3,6 +3,7 @@ from models import ConfModel
 class CreateRecord:
     def conferences(self, **kwargs):
         ConfModel.create(
+            #id=kwargs['id'],
             name=kwargs['name'],
             link=kwargs['link'],
             abbreviation=kwargs['abbreviation'],

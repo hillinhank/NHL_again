@@ -1,6 +1,12 @@
 from peewee import *
-
-database = PostgresqlDatabase()
+import config
+database = PostgresqlDatabase(
+    database=config.DATABASES['NAME'],
+    user=config.DATABASES['USER'],
+    host=config.DATABASES['HOST'],
+    password=config.DATABASES['PASSWORD'],
+    port=config.DATABASES['PORT']
+    )
 
 class BaseModel(Model):
     class Meta:

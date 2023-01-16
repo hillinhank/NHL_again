@@ -11,3 +11,5 @@ DATABASES={
     'NAME': os.getenv("DATABASE_NAME"),
     'PORT':5432
 }
+
+NHL_ACCESS_KEY = os.getenv("NHL_ACCESS_KEY")
